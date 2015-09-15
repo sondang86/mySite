@@ -20,7 +20,7 @@ if (isset($_POST['wp-submit'])) {
     
     //Redirect back to login page if reCaptcha has not verified
     if($response2['success'] == FALSE){
-        set_transient("captcha_message", '<p><div class="recaptcha_message"><h4>Captcha has not been verified</h4></div></p>', 5);
+        set_transient("captcha_message", '<p><div class="recaptcha_message" style="margin-bottom: 15px;"><h4>Captcha has not been verified</h4></div></p>', 5);
         wp_redirect("wp-login.php");exit;
     }
 }
@@ -975,7 +975,7 @@ switch ($action) {
                     <input type="password" name="pwd" id="user_pass"<?php echo $aria_describedby_error; ?> class="input" value="" size="20" required="required"/></label>
             </p>    
             <p>
-                <div class="g-recaptcha recaptcha" data-sitekey="6LdowAwTAAAAACIXQrZY14ikPT4IcCHP9euH4XZb" style="margin-left: -15px; margin-bottom: 25px;recaptcha_message"></div>
+                <div class="g-recaptcha recaptcha" data-sitekey="6LdowAwTAAAAACIXQrZY14ikPT4IcCHP9euH4XZb" style="margin-left: -15px; margin-bottom: 25px;"></div>
             </p>
 
         <?php
