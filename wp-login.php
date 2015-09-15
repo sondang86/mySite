@@ -975,7 +975,7 @@ switch ($action) {
                     <input type="password" name="pwd" id="user_pass"<?php echo $aria_describedby_error; ?> class="input" value="" size="20" required="required"/></label>
             </p>    
             <p>
-                <div class="g-recaptcha recaptcha" data-sitekey="6LdowAwTAAAAACIXQrZY14ikPT4IcCHP9euH4XZb"></div>
+                <div class="g-recaptcha recaptcha" data-sitekey="6LdowAwTAAAAACIXQrZY14ikPT4IcCHP9euH4XZb" style="margin-left: -15px; margin-bottom: 25px;recaptcha_message"></div>
             </p>
 
         <?php
@@ -989,7 +989,7 @@ switch ($action) {
                 set_transient("captcha_message", "");
             } else {
                 //Captcha validate failed
-                set_transient("captcha_message", '<p><div class="recaptcha_message"><h4>Captcha has not been verified</h4></div></p>');
+                set_transient("captcha_message", '<p><div class="recaptcha_message" style="margin-bottom: 15px;"><h4>Captcha has not been verified</h4></div></p>');
                 wp_redirect("wp-login.php");
             }
         }
