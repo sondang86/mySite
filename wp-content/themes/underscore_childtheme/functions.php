@@ -58,7 +58,7 @@ add_action('wp_enqueue_scripts', 'register_jquery_ui_style');
 
 function underscore_styles() {
     wp_enqueue_style('foundation_styles', get_template_directory_uri() . '/css/foundation.css');
-    wp_enqueue_style('custom_styles', get_stylesheet_directory_uri() .'/custom-style.css', array(), rand(111,9999) );
+    wp_enqueue_style('custom_styles', get_stylesheet_directory_uri() .'/custom-style.css', array());
     wp_enqueue_style('fonts', 'http://fonts.googleapis.com/css?family=Lato|Droid+Sans|Droid+Serif|PT+Sans+Narrow');
 }
 
