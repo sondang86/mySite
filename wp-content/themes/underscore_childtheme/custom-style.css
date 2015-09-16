@@ -1,0 +1,18 @@
+/*Jquery UI Tabs*/
+.ui-tabs {
+    margin-bottom: 15px;
+    border-bottom: 5px solid #FF8500;
+    background: none;
+}
+
+.ui-tabs .ui-tabs-nav li {
+    font-size: 12px;
+}
+
+.ui-widget-content a {
+    color: #1796CE;
+}
+
+#Comments {
+    word-wrap: break-word;
+}
