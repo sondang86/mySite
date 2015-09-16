@@ -16,7 +16,7 @@ get_header();
 <div class="row">
     <?php
     if (is_active_sidebar('sidebar-1')) {
-        echo '<div class="medium-8 columns">';
+        echo '<div class="large-8 medium-7 small-12 columns">';
     } else {
         echo '<div class="medium-12 columns">';
     }
@@ -50,7 +50,7 @@ get_header();
         </main><!-- #main -->
     </div><!-- #primary -->
 </div>
-<div class="medium-4 columns end">
+<div class="large-4 medium-5 small-12 columns end">
     <?php get_sidebar(); ?>
 </div>
 </div>        
