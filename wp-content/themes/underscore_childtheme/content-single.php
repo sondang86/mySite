@@ -46,13 +46,12 @@ $post_link = wp_get_shortlink();
             ?>
 </div>
         </div><!-- .entry-content -->
-
     </div>
     <div class="row">
         <div class="medium-12 columns">
             <footer class="entry-footer">
-                <?php social_share() ?>
-
+                <div class="social_share"><?php social_share();?></div>
+                <div class="facebook_like"><?php facebook_like(get_the_permalink());?></div>
                 <div class="tagged-list">
                     <?php get_tagged_list() ?>
                 </div>

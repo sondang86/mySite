@@ -578,6 +578,10 @@ ul.pagination > a {
     display: inline-block;
 }
 
+.facebook_like {
+    margin-top: 25px;
+}
+
 /*widget search*/ 
 
 .widget_search, .widget_tag_cloud, .widget_archive, .widget_recent_entries, .widget_related_posts {

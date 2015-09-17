@@ -313,4 +313,17 @@ function custom_comment($comment, $args, $depth) {
         }
         
         add_action('wp_enqueue_scripts', 'register_myAjax_script');
+        
+        function facebook_like($data){?>
+            <script>
+                (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <div class="fb-like" data-href="<?php echo $data?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
+        <?php }
 ?>
