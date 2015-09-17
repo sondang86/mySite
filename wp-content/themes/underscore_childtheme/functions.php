@@ -274,19 +274,19 @@ function custom_comment($comment, $args, $depth) {
     <?php function social_share() {?>
         <div class="social-buttons">
             <span class="share-text">SHARE</span>
-            <!-- Facebook Share Button -->
             <ul>
-                <li><a class="btnz share facebook" href="http://www.facebook.com/sharer.php?u=<?php echo $post_link; ?>" rel="external" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
-            <!-- Googple Plus Share Button -->
-            <li><a class="btnz share gplus" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=<?php echo $post_link; ?>&amp;name=<?php the_title(); ?>" rel="external" target="_blank"><i class="fa fa-google-plus"></i> Google</a></li>
-            <!-- Twitter Share Button -->
-            <li><a class="btnz share twitter" href="http://twitter.com/home?status=<?php the_title(); ?> <?php echo $post_link; ?> " rel="external" target="_blank"><i class="fa fa-twitter"></i> Tweet</a></li>
-            <!-- Stumbleupon Share Button -->
-            <li><a class="btnz share stumbleupon" href="http://www.stumbleupon.com/submit?url=<?php echo $post_link; ?>&title=<?php the_title(); ?>" rel="external" target="_blank"><i class="fa fa-stumbleupon"></i> Stumble</a></li>
-            <!-- Pinterest Share Button -->
-            <li><a class="btnz share pinterest" href="http://pinterest.com/pin/create/button/?url=<?php echo $post_link; ?>&amp;description=<?php the_title(); ?>" rel="external" target="_blank"><i class="fa fa-pinterest"></i> Pin it</a></li>
-            <!-- LinkedIn Share Button -->
-            <li><a class="btnz share linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $post_link; ?>&title=<?php the_title(); ?>" rel="external" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+                <!-- Facebook Share Button -->
+                <li><a class="btnz share facebook" href="http://www.facebook.com/sharer.php?u=<?php echo get_the_permalink(); ?>" rel="external" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
+                <!-- Googple Plus Share Button -->
+                <li><a class="btnz share gplus" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=<?php echo get_the_permalink(); ?>&amp;name=<?php the_title(); ?>" rel="external" target="_blank"><i class="fa fa-google-plus"></i> Google</a></li>
+                <!-- Twitter Share Button -->
+                <li><a class="btnz share twitter" href="http://twitter.com/home?status=<?php the_title(); ?> <?php echo get_the_permalink(); ?> " rel="external" target="_blank"><i class="fa fa-twitter"></i> Tweet</a></li>
+                <!-- Stumbleupon Share Button -->
+                <li><a class="btnz share stumbleupon" href="http://www.stumbleupon.com/submit?url=<?php echo get_the_permalink(); ?>&title=<?php the_title(); ?>" rel="external" target="_blank"><i class="fa fa-stumbleupon"></i> Stumble</a></li>
+                <!-- Pinterest Share Button -->
+                <li><a class="btnz share pinterest" href="http://pinterest.com/pin/create/button/?url=<?php echo get_the_permalink(); ?>&amp;description=<?php the_title(); ?>" rel="external" target="_blank"><i class="fa fa-pinterest"></i> Pin it</a></li>
+                <!-- LinkedIn Share Button -->
+                <li><a class="btnz share linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo get_the_permalink(); ?>&title=<?php the_title(); ?>" rel="external" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
             </ul>
         </div>
     <?php }    
