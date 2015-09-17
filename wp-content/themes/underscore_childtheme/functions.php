@@ -271,9 +271,18 @@ function custom_comment($comment, $args, $depth) {
         <span class="posted-on-comment"><i class="fa fa-comment-o">&nbsp;</i><a href="#respond"><?php comments_popup_link('Leave a comment', '1 comment', 'comments'); ?></a></span>    
         <?php edit_post_link( esc_html__( 'Edit', '_s' ), '<span class="edit-link">', '</span>' );?>
     <?php }?>
+        
     <?php function social_share() {?>
         <div class="social-buttons">
             <span class="share-text">SHARE</span>
+            <script type="text/javascript">
+                jQuery(document).ready(function(){
+                   jQuery(".share").click(function(event){
+                       event.preventDefault();
+                       window.open(jQuery(this).attr("href"), "popupWindow", "width=600,height=600,scrollbars=yes");
+                   });
+                });
+            </script>
             <ul>
                 <!-- Facebook Share Button -->
                 <li><a class="btnz share facebook" href="http://www.facebook.com/sharer.php?u=<?php echo get_the_permalink(); ?>" rel="external" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
