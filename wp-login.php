@@ -10,20 +10,20 @@
 /** Make sure that the WordPress bootstrap has run before continuing. */
 require( dirname(__FILE__) . '/wp-load.php' );
 
-if (isset($_POST['wp-submit'])) {
-    //form submitted
-    //check if other form details are correct
-    //verify captcha
-    $recaptcha_secret = "6LdowAwTAAAAADhd9i37jMjVGuFgmd6_mlIVFnk8";
-    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $recaptcha_secret . "&response=" . $_POST['g-recaptcha-response']);
-    $response2 = json_decode($response, true);
-    
-    //Redirect back to login page if reCaptcha has not verified
-    if($response2['success'] == FALSE){
-        set_transient("captcha_message", '<p><div class="recaptcha_message" style="margin-bottom: 15px;"><h4>Captcha has not been verified</h4></div></p>', 5);
-        wp_redirect("wp-login.php");exit;
-    }
-}
+//if (isset($_POST['wp-submit'])) {
+//    //form submitted
+//    //check if other form details are correct
+//    //verify captcha
+//    $recaptcha_secret = "6LdowAwTAAAAADhd9i37jMjVGuFgmd6_mlIVFnk8";
+//    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $recaptcha_secret . "&response=" . $_POST['g-recaptcha-response']);
+//    $response2 = json_decode($response, true);
+//    
+//    //Redirect back to login page if reCaptcha has not verified
+//    if($response2['success'] == FALSE){
+//        set_transient("captcha_message", '<p><div class="recaptcha_message" style="margin-bottom: 15px;"><h4>Captcha has not been verified</h4></div></p>', 5);
+//        wp_redirect("wp-login.php");exit;
+//    }
+//}
 
 // Redirect to https login if forced to use SSL
 if (force_ssl_admin() && !is_ssl()) {
@@ -973,26 +973,28 @@ switch ($action) {
             <p>
                 <label for="user_pass"><?php _e('Password') ?><br />
                     <input type="password" name="pwd" id="user_pass"<?php echo $aria_describedby_error; ?> class="input" value="" size="20" required="required"/></label>
-            </p>    
+            </p> 
+            
+            <!--recaptcha form-->
             <p>
-                <div class="g-recaptcha recaptcha" data-sitekey="6LdowAwTAAAAACIXQrZY14ikPT4IcCHP9euH4XZb" style="margin-left: -15px; margin-bottom: 25px;"></div>
+                <!--<div class="g-recaptcha recaptcha" data-sitekey="6LdowAwTAAAAACIXQrZY14ikPT4IcCHP9euH4XZb" style="margin-left: -15px; margin-bottom: 25px;"></div>-->
             </p>
-
+            <!--#recaptcha form-->
         <?php
-          echo get_transient("captcha_message");
-          set_transient("captcha_message", '');
+//          echo get_transient("captcha_message");
+//          set_transient("captcha_message", '');
           
           //reCaptcha validate
 
-        if (isset($_POST['wp-submit'])) {        
-            if ($response2["success"] === true) {
-                set_transient("captcha_message", "");
-            } else {
-                //Captcha validate failed
-                set_transient("captcha_message", '<p><div class="recaptcha_message" style="margin-bottom: 15px;"><h4>Captcha has not been verified</h4></div></p>');
-                wp_redirect("wp-login.php");
-            }
-        }
+//        if (isset($_POST['wp-submit'])) {        
+//            if ($response2["success"] === true) {
+//                set_transient("captcha_message", "");
+//            } else {
+//                //Captcha validate failed
+//                set_transient("captcha_message", '<p><div class="recaptcha_message" style="margin-bottom: 15px;"><h4>Captcha has not been verified</h4></div></p>');
+//                wp_redirect("wp-login.php");
+//            }
+//        }
             /**
              * Fires following the 'Password' field in the login form.
              *
